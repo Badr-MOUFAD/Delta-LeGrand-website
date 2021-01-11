@@ -4,8 +4,13 @@
     &:hover,
     &.active {
       color: theme-color("primary");
-      border-left: 2px solid theme-color("primary");
     }
+
+    &.active-sidebar {
+        color: theme-color("primary");
+        border-left: 2px solid theme-color("primary");
+    }
+  
 
     i:not(.fa) {
         position: relative;

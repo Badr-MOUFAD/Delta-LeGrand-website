@@ -7,6 +7,8 @@ import { Container, Row } from "reactstrap";
 //
 import LandingPage from "./LandingPage";
 import Nacelle from "./studies/Nacelle";
+import Plateau from "./studies/Plateau";
+import Simulation from "./studies/Simulation";
 
 
 export default function Index(props) {
@@ -14,6 +16,7 @@ export default function Index(props) {
   return(
     <React.Fragment>  
       <Switch>
+        {/* page d'aceuil */}
         <Route 
           exact  path="/landing-page" 
           render={() => <LandingPage />}
@@ -26,12 +29,24 @@ export default function Index(props) {
           exact path="/our-studies" 
           render={() => <h1> Hello </h1>}
           />
+
+        { /* nos études */}
         <Route 
           exact path="/studies-nacelle" 
           render={() => <Nacelle />}
           />
 
-        <Redirect to="/studies-nacelle"/>
+        <Route 
+          exact path="/studies-plateau" 
+          render={() => <Plateau />}
+          />
+
+        <Route 
+          exact path="/studies-simulation" 
+          render={() => <Simulation />}
+          />
+
+        <Redirect to="/landing-page"/>
       </Switch>
     </React.Fragment>
   );

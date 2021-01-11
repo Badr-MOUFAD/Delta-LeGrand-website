@@ -32,10 +32,15 @@ export function NavbarLandingPage(props) {
     const [collapseClasses, setCollapseClasses] = useState("");
     const [collapseOpen, setCollapseOpen] = useState(false);
 
+    const withHeadroom = props.headroom;
+
     useEffect(() => {
+      // if the functionnality is enabled
+      if(withHeadroom) {
         let headroom = new Headroom(document.getElementById("navbar-main"));
         // initialise
         headroom.init();
+      }
     }, []);
 
     return(
@@ -45,7 +50,7 @@ export function NavbarLandingPage(props) {
             expand="lg"
             id="navbar-main"
             >
-              <Container>
+              <>
                 {/*brand */}
                 <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                   <img
@@ -100,7 +105,7 @@ export function NavbarLandingPage(props) {
                 </UncontrolledCollapse>
 
                 
-              </Container>
+              </>
           </Navbar>
         </header>
     );

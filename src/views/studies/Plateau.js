@@ -11,9 +11,10 @@ import { NavbarLandingPage } from "components/Navbar";
 import { GradientSectionWithCircles } from "components/CoreComponents";
 import Footer from "components/Footer";
 
-import { sidebarLinks, content } from "assets/content/nacelle";
+import { sidebarLinks, content } from "assets/content/plateau";
 
-export default function Nacelle(props) {
+
+export default function Plateau(props) {
     const [activeLink, setActiveLink] = useState("nacelle-schema-cinematique");
 
     const routeHeader = {
@@ -21,7 +22,7 @@ export default function Nacelle(props) {
         title: "Receuil Des Etudes"
     }
 
-    const sectionTitle = "Nacelle";
+    const sectionTitle = "Plateau";
 
 
     return (
@@ -50,7 +51,7 @@ export default function Nacelle(props) {
 
                     <Row className="mr-5 ml-5">
                         <Col 
-                            className="border-right pt-5 pb-5 sticky-top bg-white mb-5" 
+                            className="border-right pt-5 pb-5 sticky-top bg-white" 
                             style={{ height: "300px", zIndex: "10"}} 
                             xs={12}
                             lg={3}

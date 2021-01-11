@@ -1,23 +1,37 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col, Badge, Card, CardImg, CardBody } from "reactstrap";
 
 import { NavbarLandingPage } from "../components/Navbar";
 import { GradientSectionWithCircles } from "../components/CoreComponents";
 import Footer from '../components/Footer';
+
+import { teamMembers } from '../assets/content/team';
+
+import plateauImage from "assets/img/theme/img-1-1200x1000.jpg";
+import robotImage from "assets/img/theme/promo-1.png";
+import InterfaceSVG from "assets/img/ill/ill-2.svg";
 
 
 export default function LandingPage(props) {
 
     return(
         <React.Fragment>
-            <NavbarLandingPage />
+            <NavbarLandingPage headroom={true}/>
 
             <GradientSectionWithCircles>
                 <Slogan />
             </GradientSectionWithCircles>
-            
+
+            <ProductDescription />
+
+            <PlateauDescription />
+
+            <InterfaceDescription />
+
+            <TeamMembers />
+
             <Footer />
         </React.Fragment>
     );
@@ -86,3 +100,339 @@ export function Slogan(props) {
         </Container>
     );
 }
+
+
+export function ProductDescription(props) {
+    const product = {
+        title: "Delta Le Grand",
+        description: "Ici Ici Ici Ici Ici Ici Ici Ici Ici Ici Ici\
+                        une une une  une  une  une  une  une  une  une \
+                        description description description description description\
+                        succinte succinte succinte succinte succinte succinte succinte succinte succinte \
+                        Du Du Du Du Du Du Du Du Du Du Du Du Du Du v Du Du Du \
+                        Robot Robot Robot Robot Robot Robot Robot Robot Robot",
+        features: [
+            {
+                description: <span><strong>Impression 3D</strong><br/>avec une précision résonable</span>,
+                iconClassName: "ni ni-ruler-pencil"
+            },
+            {
+                description: <span><strong>Plateau inlcinable</strong><br/>pour une meilleur adaptation</span>,
+                iconClassName: "ni ni-planet"
+            },
+            {
+                description: <span><strong>Interface de commande</strong><br/> intuitive et très ergonomique</span>,
+                iconClassName: "ni ni-tv-2"
+            },
+        ]
+    }
+
+    return(
+        <section className="section section-lg">
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col className="order-md-2" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src={robotImage}
+                  />
+                </Col>
+                <Col className="order-md-1" md="6">
+                  <div className="pr-md-5">
+                    <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
+                      <i className="ni ni-bulb-61" />
+                    </div>
+
+                    {/* Description of the product */}
+                    <h3>{product.title}</h3>
+                    <p>
+                        {product.description}
+                    </p>
+
+                    {/* features */}
+                    <ul className="list-unstyled mt-3">
+                      {product.features.map((feature, i) => {
+                          return(
+                            <li key={`landing-page-feature-${i}`} className="py-3">
+                                <div className="d-flex align-items-center">
+                                  <div>
+                                    <Badge className="badge-circle mr-3" color="primary">
+                                      <i className={feature.iconClassName} />
+                                    </Badge>
+                                  </div>
+                                  <div>
+                                    <h6 className="mb-0">
+                                      {feature.description}
+                                    </h6>
+                                  </div>
+                                </div>
+                            </li>
+                          );
+                      })}
+                    </ul>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+    );
+}
+
+
+export function PlateauDescription(props) {
+
+    return(
+        <section className="section bg-secondary mb-5">
+          <Container>
+            <Row className="row-grid align-items-center">
+              <Col md="6">
+                <Card className="bg-warning shadow border-0">
+                  <CardImg
+                    alt="..."
+                    src={plateauImage}
+                    top
+                  />
+                  <blockquote className="card-blockquote">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="svg-bg"
+                      preserveAspectRatio="none"
+                      viewBox="0 0 583 95"
+                    >
+                      <polygon
+                        className="fill-warning"
+                        points="0,52 583,95 0,95"
+                      />
+                      <polygon
+                        className="fill-warning"
+                        opacity=".2"
+                        points="0,42 583,95 683,0 0,95"
+                      />
+                    </svg>
+                    <h4 className="display-3 font-weight-bold text-white">
+                      Design System
+                    </h4>
+                    <p className="lead text-italic text-white">
+                      The Arctic Ocean freezes every winter and much of the
+                      sea-ice then thaws every summer, and that process will
+                      continue whatever happens.
+                    </p>
+                  </blockquote>
+                </Card>
+              </Col>
+              <Col md="6">
+                <div className="pl-md-5">
+                  <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                    <i className="ni ni-planet" />
+                  </div>
+                  <h3>Plateau inclinable</h3>
+                  <p className="lead">
+                    Don't let your uses guess by attaching tooltips and
+                    popoves to any element. Just make sure you enable them
+                    first via JavaScript.
+                  </p>
+                  <p>
+                    The kit comes with three pre-built pages to help you get
+                    started faster. You can change the text and images and
+                    you're good to go.
+                  </p>
+                  <p className="mb-5">
+                    The kit comes with three pre-built pages to help you get
+                    started faster. You can change the text and images and
+                    you're good to go.
+                  </p>
+                  <a
+                    className="font-weight-bold text-warning text-center mt-5"
+                    href="#pablo"
+                    onClick={e => e.preventDefault()}
+                    >
+                    Explorer en détail la solution mécanique 
+                  </a>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+    );
+}
+
+
+export function InterfaceDescription(props) {
+
+    return(
+        <section className="section pb-0 bg-gradient-warning" style={{ marginBottom: "200px"}}>
+            <Container>
+              <Row className="row-grid align-items-center">
+                <Col className="order-lg-2 ml-lg-auto" md="6">
+                  <div className="position-relative pl-md-5">
+                    <img
+                      alt="..."
+                      className="img-center img-fluid"
+                      src={InterfaceSVG}
+                    />
+                  </div>
+                </Col>
+                <Col className="order-lg-1" lg="6">
+                  <div className="d-flex px-3">
+                    <div>
+                      <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        <i className="ni ni-tv-2 text-primary" />
+                      </div>
+                    </div>
+                    <div className="pl-4">
+                      <h4 className="display-3 text-white">Interface Intuitive</h4>
+                      <p className="text-white">
+                        The Arctic Ocean freezes every winter and much of the
+                        sea-ice then thaws every summer, and that process will
+                        continue whatever.
+                      </p>
+                    </div>
+                  </div>
+                  <Card className="shadow shadow-lg--hover mt-5">
+                    <CardBody>
+                      <div className="d-flex px-3">
+                        <div>
+                          <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                            <i className="ni ni-satisfied" />
+                          </div>
+                        </div>
+                        <div className="pl-4">
+                          <h5 className="title text-success">
+                            Awesome Support
+                          </h5>
+                          <p>
+                            The Arctic Ocean freezes every winter and much of
+                            the sea-ice then thaws every summer, and that
+                            process will continue whatever.
+                            The Arctic Ocean freezes every winter and much of
+                            the sea-ice then thaws every summer, and that
+                            process will continue whatever.
+                            The Arctic Ocean freezes every winter and much of
+                            the sea-ice then thaws every summer, and that
+                            process will continue whatever.
+                          </p>
+                          <a
+                            className="text-success"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                            >
+                            Télécharger
+                          </a>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+            {/* SVG separator */}
+            <div className="separator separator-bottom separator-skew zindex-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                version="1.1"
+                viewBox="0 0 2560 100"
+                x="0"
+                y="0"
+              >
+                <polygon
+                  className="fill-white"
+                  points="2560 0 2560 100 0 100"
+                />
+              </svg>
+            </div>
+          </section>
+    );
+}
+
+export function TeamMembers(props) {
+    const description = "According to the National Oceanic and Atmospheric\
+                        Administration, Ted, Scambos, NSIDClead scentist, puts the\
+                        potentially record maximum.";
+
+    return(
+        <Container className="my-5">
+            <Row className="justify-content-center text-center mb-lg">
+                <Col lg="8">
+                  <h2 className="display-3">Team Delta Le Grand</h2>
+                  <p className="lead text-muted">
+                    {description}
+                  </p>
+                </Col>
+            </Row>
+
+            <Row>
+                {teamMembers.map((member, i) => {
+                    return(
+                        <Col key={`anding-page-team-member-${i}`} className="mb-5" xs="6" lg="3" md="6">
+                            <div className="px-4">
+                                <img
+                                    alt="..."
+                                    className="rounded img-center img-fluid shadow shadow-lg--hover"
+                                    src={member.image}
+                                    style={{ width: "300px" }}
+                                    />
+                                <div className="pt-4 text-center">
+                                    <h6 className="title">
+                                      <span className="d-block mb-1">{member.name}</span>
+                                      <small className="h6 text-muted">{member.title}</small>
+                                    </h6>
+                                </div>
+                            </div>
+                        </Col>
+                    );
+                })}
+            </Row>
+        </Container>
+    );
+/*
+    return(
+        <React.Fragment>
+            
+            <Container>
+                <Row>
+                    <Col xs={12}>
+                        <h2 className="mt-lg mb-3">
+                            <span>Team Delta Le Grand</span>
+                        </h2>
+                    </Col>
+                </Row>
+                <Row className="align-items-center">
+                    {teamMembers.map((member, i) => {
+                        return(
+                            <Col key={`anding-page-team-member-${i}`} className="mt-5 mb-sm-2" xs="6" sm="3">
+                                <img
+                                  alt="..."
+                                  className="img-fluid rounded mb-1"
+                                  src={member.image}
+                                  style={{ width: "150px" }}
+                                />
+
+                                <small className="d-block mb-4 mt-2">
+                                    <span>{member.name}</span>
+                                    <br /> {"– "}
+                                    <strong className="text-muted">{member.title}</strong>
+                                </small>
+                            </Col>
+                        );
+                    })}
+                </Row>
+            </Container>
+        </React.Fragment>
+    );*/
+}
+
+/**
+ * <Col className="mt-5 mt-sm-0" sm="3" xs="6">
+            <small className="d-block text-uppercase font-weight-bold mb-4">
+              Raised
+            </small>
+            <img
+              alt="..."
+              className="img-fluid rounded shadow-lg"
+              src={require("assets/img/theme/team-3-800x800.jpg")}
+              style={{ width: "150px" }}
+            />
+          </Col>
+ */

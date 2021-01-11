@@ -6,7 +6,7 @@ export const arrRoutesNav = [
                 title: "Impression 3D",
                 description: "description impression 3D",
                 iconClassName: "ni ni-ruler-pencil",
-                href: "/studies/nacelle",
+                href: "",
             },
             {
                 title: "Plateau inclinable",
@@ -58,13 +58,13 @@ export const arrRoutesNav = [
                 title: "Plateau",
                 description: "Description",
                 iconClassName: "ni ni-planet",
-                href: "",
+                href: "/studies-plateau",
             },
             {
                 title: "Simulation Des Efforts",
                 description: "Description",
                 iconClassName: "ni ni-chart-bar-32",
-                href: "",
+                href: "/studies-simulation",
             },
         ]
     },

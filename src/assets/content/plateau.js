@@ -1,43 +1,43 @@
 export const sidebarLinks = [
     {
         text: "Schéma cinématique",
-        href: "#nacelle-schema-cinematique",
+        href: "#plateau-schema-cinematique",
     },
     {
         text: "Equation de mouvement",
-        href: "#nacelle-equation-mouvement",
+        href: "#plateau-equation-mouvement",
     },
     {
         text: "Espace de travail",
-        href: "#nacelle-espace-travail",
+        href: "#plateau-espace-travail",
     },
     {
         text: "SolidWorks",
-        href: "#nacelle-solidworks"
+        href: "#plateau-solidworks"
     }
 ];
 
 export const content = [
     {
-        id: "nacelle-schema-cinematique",
+        id: "plateau-schema-cinematique",
         title: "Schéma cinématique",
         description: "description",
         image: "",
     },
     {
-        id: "nacelle-equation-mouvement",
+        id: "plateau-equation-mouvement",
         title: "Equation du mouvement",
         description: "description",
         image: "",
     },
     {
-        id: "nacelle-espace-travail",
+        id: "plateau-espace-travail",
         title: "Espace de travail",
         description: "description",
         image: "",
     },
     {
-        id: "nacelle-solidworks",
+        id: "plateau-solidworks",
         title: "SolidWorks",
         description: "description",
         image: "",
