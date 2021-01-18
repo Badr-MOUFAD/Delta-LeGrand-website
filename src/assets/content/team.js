@@ -1,6 +1,7 @@
 import React from "react";
 
-import imgBadrMOUFAD from "assets/img/teamMembers/badr-moufad.jpg"
+//import imgBadrMOUFAD from "assets/img/teamMembers/badr-moufad.jpg";
+const imgBadrMOUFAD = "test";
 
 export const teamMembers = [
     { 

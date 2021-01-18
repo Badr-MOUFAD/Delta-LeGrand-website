@@ -4,7 +4,7 @@ import React from "react";
 import { Button, Container, Row, Col, Badge, Card, CardImg, CardBody } from "reactstrap";
 
 import { NavbarLandingPage } from "../components/Navbar";
-import { GradientSectionWithCircles } from "../components/CoreComponents";
+import { GradientSectionWithCircles, SvgSeperator } from "../components/CoreComponents";
 import Footer from '../components/Footer';
 
 import { teamMembers } from '../assets/content/team';
@@ -25,9 +25,8 @@ export default function LandingPage(props) {
             </GradientSectionWithCircles>
 
             <ProductDescription />
-
+            <ImpressionDescription />
             <PlateauDescription />
-
             <InterfaceDescription />
 
             <TeamMembers />
@@ -180,6 +179,62 @@ export function ProductDescription(props) {
 }
 
 
+export function ImpressionDescription(props) {
+  
+
+  return(
+    <section className="section section-lg bg-gradient-neutral">
+            <Container className="pt-lg pb-100">
+              <Row className="text-center justify-content-center">
+                <Col lg="10">
+                  <h2 className="display-3">Impression 3D</h2>
+                  <p className="lead">
+                    According to the National Oceanic and Atmospheric
+                    Administration, Ted, Scambos, NSIDClead scentist, puts the
+                    potentially record low maximum sea ice extent tihs year down
+                    to low ice.
+                  </p>
+                </Col>
+              </Row>
+              <Row className="row-grid mt-5">
+                <Col lg="4">
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                    <i className="fa fa-pencil text-primary"></i>
+                  </div>
+                  <h5 className="mt-3">Précision</h5>
+                  <p className="mt-3">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </Col>
+                <Col lg="4">
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                    <i className="fa fa-product-hunt text-primary" />
+                  </div>
+                  <h5 className="mt-3">Filament PLA</h5>
+                  <p className="mt-3">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </Col>
+                <Col lg="4">
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                    <i className="fa fa-certificate text-primary"/>
+                  </div>
+                  <h5 className="mt-3">Céramique</h5>
+                  <p className="mt-3">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+            <SvgSeperator />
+          </section>
+  );
+}
+
+
 export function PlateauDescription(props) {
 
     return(
@@ -327,21 +382,7 @@ export function InterfaceDescription(props) {
               </Row>
             </Container>
             {/* SVG separator */}
-            <div className="separator separator-bottom separator-skew zindex-100">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                y="0"
-              >
-                <polygon
-                  className="fill-white"
-                  points="2560 0 2560 100 0 100"
-                />
-              </svg>
-            </div>
+            <SvgSeperator />
           </section>
     );
 }
@@ -386,53 +427,4 @@ export function TeamMembers(props) {
             </Row>
         </Container>
     );
-/*
-    return(
-        <React.Fragment>
-            
-            <Container>
-                <Row>
-                    <Col xs={12}>
-                        <h2 className="mt-lg mb-3">
-                            <span>Team Delta Le Grand</span>
-                        </h2>
-                    </Col>
-                </Row>
-                <Row className="align-items-center">
-                    {teamMembers.map((member, i) => {
-                        return(
-                            <Col key={`anding-page-team-member-${i}`} className="mt-5 mb-sm-2" xs="6" sm="3">
-                                <img
-                                  alt="..."
-                                  className="img-fluid rounded mb-1"
-                                  src={member.image}
-                                  style={{ width: "150px" }}
-                                />
-
-                                <small className="d-block mb-4 mt-2">
-                                    <span>{member.name}</span>
-                                    <br /> {"– "}
-                                    <strong className="text-muted">{member.title}</strong>
-                                </small>
-                            </Col>
-                        );
-                    })}
-                </Row>
-            </Container>
-        </React.Fragment>
-    );*/
 }
-
-/**
- * <Col className="mt-5 mt-sm-0" sm="3" xs="6">
-            <small className="d-block text-uppercase font-weight-bold mb-4">
-              Raised
-            </small>
-            <img
-              alt="..."
-              className="img-fluid rounded shadow-lg"
-              src={require("assets/img/theme/team-3-800x800.jpg")}
-              style={{ width: "150px" }}
-            />
-          </Col>
- */

@@ -186,7 +186,8 @@
         span {
             height: 120px;
             width: 120px;
-            border-radius: 50%;
+            border-radius: 0%;
+            transform: rotate(45deg);
         }
 
         .span-200 {

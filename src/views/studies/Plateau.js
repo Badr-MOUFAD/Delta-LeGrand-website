@@ -51,7 +51,7 @@ export default function Plateau(props) {
 
                     <Row className="mr-5 ml-5">
                         <Col 
-                            className="border-right pt-5 pb-5 sticky-top bg-white" 
+                            className="lg-border-right pt-5 pb-5 sticky-top bg-white" 
                             style={{ height: "300px", zIndex: "10"}} 
                             xs={12}
                             lg={3}
