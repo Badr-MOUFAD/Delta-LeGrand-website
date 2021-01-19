@@ -1,5 +1,5 @@
 export const arrRoutesNav = [
-    {
+/*     {
         routeName: "Accueil",
         arrFeatures: [
             {
@@ -21,8 +21,8 @@ export const arrRoutesNav = [
                 href: "",
             },
         ]
-    },
-    {
+    }, */
+   /*  {
         routeName: "Fiche Technique",
         arrFeatures: [
             {
@@ -44,7 +44,7 @@ export const arrRoutesNav = [
                 href: "",
             },
         ]
-    },
+    }, */
     {
         routeName: "Receuil Des Etudes",
         arrFeatures: [
@@ -68,6 +68,10 @@ export const arrRoutesNav = [
             },
         ]
     },
+    /* {
+        routeName: "Remerciement",
+        arrFeatures: []
+    } */
 ];
 
 

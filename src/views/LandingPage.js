@@ -3,6 +3,10 @@ import React from "react";
 // reactstrap components
 import { Button, Container, Row, Col, Badge, Card, CardImg, CardBody } from "reactstrap";
 
+// animating the content
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
+
 import { NavbarLandingPage } from "../components/Navbar";
 import { GradientSectionWithCircles, SvgSeperator } from "../components/CoreComponents";
 import Footer from '../components/Footer';
@@ -25,11 +29,21 @@ export default function LandingPage(props) {
             </GradientSectionWithCircles>
 
             <ProductDescription />
-            <ImpressionDescription />
-            <PlateauDescription />
-            <InterfaceDescription />
+            <Fade>
+              <ImpressionDescription />
+            </Fade>
 
-            <TeamMembers />
+            <Fade>
+              <PlateauDescription />
+            </Fade>
+            
+            <Fade>
+              <InterfaceDescription />
+            </Fade>
+
+            <Fade>
+              <TeamMembers />
+            </Fade>
 
             <Footer />
         </React.Fragment>
@@ -38,7 +52,12 @@ export default function LandingPage(props) {
 
 
 export function Slogan(props) {
-    const slogan = "Ce que vous imaginez est désormais à portée de main";
+    const slogan = (
+      <span>
+        <Slide left>Ce que vous imaginez est désormais à portée de main</Slide> <br />
+        <Slide right>Imaginez, Modélisez et Imprimez</Slide>
+      </span>
+      );
     const linkDowloadSheet = "";
     const linkDowloadInterface = "";
 
@@ -60,39 +79,47 @@ export function Slogan(props) {
                         <div className="btn-wrapper mt-5">
 
                         {/* Downloads */}
-                        <Button
-                            className="btn-white btn-icon mb-3 mb-sm-0"
-                            color="default"
-                            href={linkDowloadSheet}
-                            size="lg"
-                            >
-                            <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
-                            </span>
-                            <span className="btn-inner--text">Fiche technique</span>
-                        </Button>{" "}
-                        <Button
-                            className="btn-icon mb-3 mb-sm-0"
-                            color="github"
-                            href={linkDowloadInterface}
-                            size="lg"
-                            target="_blank"
-                            >
-                            <span className="btn-inner--icon mr-1">
-                                <i className="ni ni-cloud-download-95" />
-                            </span>
-                            <span className="btn-inner--text">
-                                <span>Interface Graphique</span>
-                            </span>
-                        </Button>
+                        <Row className="d-flex justify-content-center align-items-center">
+                          <Fade bottom>
+                          <Button
+                              className="btn-white btn-icon mb-3 mb-sm-0 mr-sm-3"
+                              color="default"
+                              href={linkDowloadSheet}
+                              size="lg"
+                              >
+                              <span className="btn-inner--icon mr-1">
+                                <i className="fa fa-list-ul" />
+                              </span>
+                              <span className="btn-inner--text">Fiche technique</span>
+                          </Button>{" "}
+                        </Fade>
+                        <Fade bottom>
+                          <Button
+                              className="btn-icon mb-3 mb-sm-0"
+                              color="github"
+                              href={linkDowloadInterface}
+                              size="lg"
+                              target="_blank"
+                              >
+                              <span className="btn-inner--icon mr-1">
+                                  <i className="ni ni-cloud-download-95" />
+                              </span>
+                              <span className="btn-inner--text">
+                                  <span>Interface Graphique</span>
+                              </span>
+                          </Button>
+                        </Fade>   
+                        </Row> 
                         </div>
 
                         {/* signature */}
-                        <div className="mt-5">
-                            <small className="text-white font-weight-bold mb-0 mr-2">
-                                made by passion <strong className="ml-3">Team Delta Le Grand</strong>
-                            </small>
-                        </div>
+                        <Fade bottom>
+                          <div className="mt-5">
+                              <small className="text-white font-weight-bold mb-0 mr-2">
+                                  made by passion <strong className="ml-3">Team Delta Le Grand</strong>
+                              </small>
+                          </div>
+                        </Fade>
                     </Col>
                 </Row>
             </div>
@@ -104,12 +131,13 @@ export function Slogan(props) {
 export function ProductDescription(props) {
     const product = {
         title: "Delta Le Grand",
-        description: "Ici Ici Ici Ici Ici Ici Ici Ici Ici Ici Ici\
-                        une une une  une  une  une  une  une  une  une \
-                        description description description description description\
-                        succinte succinte succinte succinte succinte succinte succinte succinte succinte \
-                        Du Du Du Du Du Du Du Du Du Du Du Du Du Du v Du Du Du \
-                        Robot Robot Robot Robot Robot Robot Robot Robot Robot",
+        description: (
+          <span>
+              Delta le Grand est une impriment 3D colossale adaptée pour imprimer des pièces aussi bien petite que grande. <br /> <br />
+              Il est doté d’une nacelle pouvant confectionner avec finesse des objets soit en plastique soit en céramique.<br />
+              Il est aussi muni d’un plateau mobile capable non seulement de translater verticalement mais aussi de s’incliner dans toutes les directions offrant ainsi une meilleure adaptabilité et mobilité. <br /> <br />
+              Delta le Grand dispose notamment de sa propre interface de commande, ergonomique et spécialement conçue pour mettre en œuvre toutes ses fonctionnalités. 
+          </span>),
         features: [
             {
                 description: <span><strong>Impression 3D</strong><br/>avec une précision résonable</span>,
@@ -145,27 +173,31 @@ export function ProductDescription(props) {
 
                     {/* Description of the product */}
                     <h3>{product.title}</h3>
-                    <p>
-                        {product.description}
-                    </p>
+                    <Fade bottom>
+                      <p>
+                          {product.description}
+                      </p>
+                    </Fade>
 
                     {/* features */}
                     <ul className="list-unstyled mt-3">
                       {product.features.map((feature, i) => {
                           return(
                             <li key={`landing-page-feature-${i}`} className="py-3">
-                                <div className="d-flex align-items-center">
-                                  <div>
-                                    <Badge className="badge-circle mr-3" color="primary">
-                                      <i className={feature.iconClassName} />
-                                    </Badge>
+                                <Fade bottom>
+                                  <div className="d-flex align-items-center">
+                                    <div>
+                                      <Badge className="badge-circle mr-3" color="primary">
+                                        <i className={feature.iconClassName} />
+                                      </Badge>
+                                    </div>
+                                    <div>
+                                      <h6 className="mb-0">
+                                        {feature.description}
+                                      </h6>
+                                    </div>
                                   </div>
-                                  <div>
-                                    <h6 className="mb-0">
-                                      {feature.description}
-                                    </h6>
-                                  </div>
-                                </div>
+                                </Fade>
                             </li>
                           );
                       })}
@@ -173,6 +205,11 @@ export function ProductDescription(props) {
                   </div>
                 </Col>
               </Row>
+              {/* <Row className="d-flex justify-content-center row-grid align-items-center">
+                <Col xs="1">
+                  <i className="fa fa-arrow-down fa-5x"></i>
+                </Col>
+              </Row> */}
             </Container>
           </section>
     );
@@ -189,43 +226,47 @@ export function ImpressionDescription(props) {
                 <Col lg="10">
                   <h2 className="display-3">Impression 3D</h2>
                   <p className="lead">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record low maximum sea ice extent tihs year down
-                    to low ice.
+                      L’impression des objets se fait par une nacelle susceptible de se déplacer dans un espace de travail cylindrique de diamètre 80cm et de hauteur 120cm. <br />
+                      Elle est munie d’un outillage permettant de confectionner des objets soit en plastique soit en céramique.
                   </p>
                 </Col>
               </Row>
               <Row className="row-grid mt-5">
                 <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="fa fa-pencil text-primary"></i>
-                  </div>
-                  <h5 className="mt-3">Précision</h5>
-                  <p className="mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <Fade bottom>
+                    <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                      <i className="fa fa-pencil text-primary"></i>
+                    </div>
+                    <h5 className="mt-3">Précision</h5>
+                    <p className="mt-3">
+                      grâce au pas fin des moteurs combiné avec le pas des glissières, <br />
+                      la nacelle peut atteindre une précision allons jusqu’à 0.1 mm
+                    </p>
+                  </Fade>
                 </Col>
                 <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="fa fa-product-hunt text-primary" />
-                  </div>
-                  <h5 className="mt-3">Filament PLA</h5>
-                  <p className="mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <Fade bottom>
+                    <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                      <i className="fa fa-product-hunt text-primary" />
+                    </div>
+                    <h5 className="mt-3">Filament PLA</h5>
+                    <p className="mt-3">
+                      l’extrudeuse de plastique est alimentée par une bobine de filament PLA. <br />
+                      Elle est principalement dédiée à des petits objets en raison de sa fine tête
+                    </p>
+                  </Fade>
                 </Col>
                 <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="fa fa-certificate text-primary"/>
-                  </div>
-                  <h5 className="mt-3">Céramique</h5>
-                  <p className="mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                  <Fade bottom>
+                    <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                      <i className="fa fa-certificate text-primary"/>
+                    </div>
+                    <h5 className="mt-3">Céramique</h5>
+                    <p className="mt-3">
+                      L’extrudeuse de céramique est alimentée par un réservoir rempli de Clay. <br />
+                      Elle est adaptée à l’impression des objets de grandes tailles
+                    </p>
+                  </Fade>
                 </Col>
               </Row>
             </Container>
@@ -266,7 +307,7 @@ export function PlateauDescription(props) {
                       />
                     </svg>
                     <h4 className="display-3 font-weight-bold text-white">
-                      Design System
+                      Design du plateau
                     </h4>
                     <p className="lead text-italic text-white">
                       The Arctic Ocean freezes every winter and much of the
@@ -283,19 +324,18 @@ export function PlateauDescription(props) {
                   </div>
                   <h3>Plateau inclinable</h3>
                   <p className="lead">
-                    Don't let your uses guess by attaching tooltips and
-                    popoves to any element. Just make sure you enable them
-                    first via JavaScript.
+                    L’avantage exclusive de Delta Le Grand c’est qu’il est doté d’un plateau mobile qui peut non seulement translater
+                    verticalement mais aussi effectuer des inclinaisons de 15 degrés dans toutes les directions. 
                   </p>
                   <p>
-                    The kit comes with three pre-built pages to help you get
-                    started faster. You can change the text and images and
-                    you're good to go.
+                    Grace à cette fonctionnalité de base, il est possible d’imprimer des formes complexes 
+                    sans avoir besoin de supports pour empêcher la matière de s’effondrer.<br /> En effet, 
+                    le plateau s’incline et exploite ainsi la gravité pour maintenir l’équilibre de la pièce en cours d’impression
                   </p>
                   <p className="mb-5">
-                    The kit comes with three pre-built pages to help you get
-                    started faster. You can change the text and images and
-                    you're good to go.
+                    L’inclinaison du plateau offre notamment une meilleure adaptation au surface irrégulière. <br/>
+                    A ce propos, il est possible de graver sur un large champ de type de surface
+                    allons des surfaces planes et inclinées jusqu’aux surfaces courbées. 
                   </p>
                   <a
                     className="font-weight-bold text-warning text-center mt-5"
@@ -338,46 +378,84 @@ export function InterfaceDescription(props) {
                     <div className="pl-4">
                       <h4 className="display-3 text-white">Interface Intuitive</h4>
                       <p className="text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever.
+                        Delta le Grand est commandé via une interface graphique simple et intuitive. 
+                        Elle se présente sous forme d’une application Desktop développé en utilisant 
+                        les UI Web Technologies.
                       </p>
                     </div>
                   </div>
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                            <i className="ni ni-satisfied" />
+                  <Fade bottom>
+                    <Card className="shadow shadow-lg--hover mt-5">
+                      <CardBody>
+                        <div className="d-flex px-3">
+                          <div>
+                            <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                              <i className="fa fa-code" />
+                            </div>
+                          </div>
+                          <div className="pl-4">
+                            <h5 className="title text-success">
+                              Développent
+                            </h5>
+                            <p>
+                              L’utilisation des UI web technologies dans notre cas le Framework React et Material-UI <br/>
+                              donne accès aux avantages offerts par le Web à savoir fluidité, animation et meilleure expérience utilisateur
+                            </p>
                           </div>
                         </div>
-                        <div className="pl-4">
-                          <h5 className="title text-success">
-                            Awesome Support
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className="text-success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                            >
-                            Télécharger
-                          </a>
+                      </CardBody>
+                    </Card>
+                  </Fade>
+                  <Fade bottom>
+                    <Card className="shadow shadow-lg--hover mt-5">
+                      <CardBody>
+                        <div className="d-flex px-3">
+                          <div>
+                            <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                              <i className="fa fa-list-alt" />
+                            </div>
+                          </div>
+                          <div className="pl-4">
+                            <h5 className="title text-success">
+                              Mode d'utilisation
+                            </h5>
+                            <p>
+                              <strong>Mode manuel</strong> dans lequel il est possible de commander soit indépendamment la nacelle et le plateau soit simultanément.<br />
+                              <strong>Mode automatique</strong> dans lequel il est possible de charger un fichier .csv et exécuter automatiquement les commandes qui y sont dedans.
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </CardBody>
-                  </Card>
+                      </CardBody>
+                    </Card>
+                  </Fade>
+                  <Fade bottom>
+                    <Card className="shadow shadow-lg--hover mt-5">
+                      <CardBody>
+                        <div className="d-flex px-3">
+                          <div>
+                            <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                              <i className="fa fa-expand" />
+                            </div>
+                          </div>
+                          <div className="pl-4">
+                            <h5 className="title text-success">
+                              Cross-plateform
+                            </h5>
+                            <p>
+                              L'interface est adapté aussi bien pour les machines Windows que les machines Mac
+                            </p>
+                            <a
+                              className="text-success"
+                              href="#pablo"
+                              onClick={e => e.preventDefault()}
+                              >
+                              Télécharger
+                            </a>
+                          </div>
+                        </div>
+                      </CardBody>
+                    </Card>
+                  </Fade>
                 </Col>
               </Row>
             </Container>
@@ -388,9 +466,12 @@ export function InterfaceDescription(props) {
 }
 
 export function TeamMembers(props) {
-    const description = "According to the National Oceanic and Atmospheric\
-                        Administration, Ted, Scambos, NSIDClead scentist, puts the\
-                        potentially record maximum.";
+    const description = (
+     <span>
+        Nous sommes une équipe de 10 étudiants ingénieurs créatifs, avides d’innovation, persévérants et prêts à entreprendre <br />
+        « <strong>Le travail de groupe</strong> » est notre emblème solennel
+     </span> 
+    );
 
     return(
         <Container className="my-5">
@@ -407,6 +488,7 @@ export function TeamMembers(props) {
                 {teamMembers.map((member, i) => {
                     return(
                         <Col key={`anding-page-team-member-${i}`} className="mb-5" xs="6" lg="3" md="6">
+                          <Fade bottom>
                             <div className="px-4">
                                 <img
                                     alt="..."
@@ -421,6 +503,7 @@ export function TeamMembers(props) {
                                     </h6>
                                 </div>
                             </div>
+                          </Fade>
                         </Col>
                     );
                 })}

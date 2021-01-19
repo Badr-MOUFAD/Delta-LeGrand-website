@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Scrollspy from 'react-scrollspy'
 
 // reactstrap components
-import {Card, Container, Row, Col, Nav, NavItem, NavbarBrand } from "reactstrap";
+import {Card, Container, Row, Col, Nav, NavItem, NavbarBrand, Collapse } from "reactstrap";
 
 // core components
 import { NavbarLandingPage } from "components/Navbar";
@@ -16,6 +16,7 @@ import { sidebarLinks, content } from "assets/content/plateau";
 
 export default function Plateau(props) {
     const [activeLink, setActiveLink] = useState("nacelle-schema-cinematique");
+    const [openOutlines, setOpenOutlines] = useState(true);
 
     const routeHeader = {
         iconClassName: "ni ni-hat-3",
@@ -57,22 +58,28 @@ export default function Plateau(props) {
                             lg={3}
                             >
                             <Nav vertical>    
-                                <NavbarBrand className="mb-3 border-bottom" tag="h3">
+                                <NavbarBrand 
+                                    className="mb-3 border-bottom" 
+                                    tag="h3" 
+                                    onClick={() => setOpenOutlines(!openOutlines)}
+                                    >
                                     <h3 className="text-capitalize"> {sectionTitle} </h3>
                                 </NavbarBrand>
 
-                                {sidebarLinks.map((item, i) => {
-                                    return(
-                                        <NavItem tag="h6" key={`nacelle-sidebar-${i}`}> 
-                                            <a 
-                                                href={item.href} 
-                                                className={((activeLink !== item.href.slice(1)) ? "nav-link" : "nav-link active-sidebar") + " text-muted"}
-                                                >
-                                                {item.text}
-                                            </a> 
-                                        </NavItem>
-                                    );
-                                })}
+                                <Collapse isOpen={openOutlines}>
+                                    {sidebarLinks.map((item, i) => {
+                                        return(
+                                            <NavItem tag="h6" key={`nacelle-sidebar-${i}`}> 
+                                                <a 
+                                                    href={item.href} 
+                                                    className={((activeLink !== item.href.slice(1)) ? "nav-link" : "nav-link active-sidebar") + " text-muted"}
+                                                    >
+                                                    {item.text}
+                                                </a> 
+                                            </NavItem>
+                                        );
+                                    })}
+                                </Collapse>
                             </Nav>
                         </Col>
 

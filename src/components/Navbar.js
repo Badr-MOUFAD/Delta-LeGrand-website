@@ -55,7 +55,7 @@ export function NavbarLandingPage(props) {
                 <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                   <img
                     alt="..."
-                    src={deltaLeGrandLogo}
+                    src={""}
                   />
                 </NavbarBrand>
                 
@@ -91,9 +91,21 @@ export function NavbarLandingPage(props) {
                     </div>
 
                     <Nav className="navbar-nav-hover align-items-lg-center" navbar>
+                        <NavItem tag={Link} to="/landing-page">
+                          <NavLink>
+                            Accueil
+                          </NavLink>
+                        </NavItem>
+
                         {arrRoutesNav.map((route, i) => 
                             <NavDetail key={`navbar-landing-page-routes-${i}`} routeDetailObject={route}/>
                         )}
+
+                        <NavItem>
+                          <NavLink tag={Link} href="">
+                            Remerciement
+                          </NavLink>
+                        </NavItem>
                     </Nav> 
 
                     {/* social media */}
