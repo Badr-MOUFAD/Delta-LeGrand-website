@@ -34,7 +34,7 @@ export const teamMembers = [
     },
     { 
         title: "",
-        name: <span>Loubna ESSAYDIE</span>,
+        name: <span>Loubna ESSAIDI</span>,
         image: imgLoubnaEssaydi,
     },
     { 

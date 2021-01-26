@@ -387,7 +387,7 @@ export function InterfaceDescription(props) {
                   <Fade bottom>
                     <Card className="shadow shadow-lg--hover mt-5">
                       <CardBody>
-                        <div className="d-flex px-3">
+                        <div className="d-flex">
                           <div>
                             <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
                               <i className="fa fa-code" />
@@ -409,7 +409,7 @@ export function InterfaceDescription(props) {
                   <Fade bottom>
                     <Card className="shadow shadow-lg--hover mt-5">
                       <CardBody>
-                        <div className="d-flex px-3">
+                        <div className="d-flex">
                           <div>
                             <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
                               <i className="fa fa-list-alt" />
@@ -431,7 +431,7 @@ export function InterfaceDescription(props) {
                   <Fade bottom>
                     <Card className="shadow shadow-lg--hover mt-5">
                       <CardBody>
-                        <div className="d-flex px-3">
+                        <div className="d-flex">
                           <div>
                             <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
                               <i className="fa fa-expand" />
