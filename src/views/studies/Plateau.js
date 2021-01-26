@@ -96,23 +96,24 @@ export default function Plateau(props) {
                                 {content.map((item, i) => {
                                     return(
                                         <Row 
-                                            key={`nacelle-content-${i}`}
+                                            key={`plateau-content-${i}`}
                                             id={item.id} 
                                             className="mb-5"
                                             >
-                                            <Col xs={12} lg={8}>
+                                            <Col xs={12} lg={12}>
                                                 <h4>{item.title}</h4>
-                                                <p>{item.description}</p>
-                                                <p>{item.description}</p>
-                                                <p>{item.description}</p>
-                                                <p>{item.description}</p>
                                                 <p>{item.description}</p>
                                             </Col>
                                             <Col 
                                                 className="d-flex justify-content-center align-items-center"
-                                                xs={12} lg={4}
+                                                xs={12} lg={12}
                                                 >
-                                                <p>image here</p>
+                                                <img 
+                                                    className="rounded img-center img-fluid border p-2 mt-2"
+                                                    src={item.image} 
+                                                    alt="..." 
+                                                    height={item.height} width={item.width}
+                                                    />
                                             </Col>
                                         </Row>
                                     );

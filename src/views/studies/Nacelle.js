@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 // for scrolling
-import Scrollspy from 'react-scrollspy'
+import Scrollspy from 'react-scrollspy';
 
 // reactstrap components
-import {Card, Container, Row, Col, Nav, NavItem, NavbarBrand, Collapse } from "reactstrap";
+import { Card, Container, Row, Col, Nav, NavItem, NavbarBrand, Collapse } from "reactstrap";
 
 // core components
 import { NavbarLandingPage } from "components/Navbar";
