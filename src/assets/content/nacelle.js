@@ -91,17 +91,17 @@ function EquationNacelle(props) {
             sont les coordonées de la normale et 
             <MathJax.Context input="tex">
                 <MathJax.Node>
-                    {`E_{xi} = \\{x + S_\\pi(R_i-r_i), \\space x + S_\\pi(-R_i+r_i),\\space x \\}`}
+                    {`E_{xi} \\in \\{x + S_\\pi(R_i-r_i), \\space x + S_\\pi(-R_i+r_i),\\space x \\}`}
                 </MathJax.Node>
             </MathJax.Context>
             <MathJax.Context input="tex">
                 <MathJax.Node>
-                    {`E_{yi} = \\{y + C_\\pi(R_i-r_i), \\space x + C_\\pi(-R_i+r_i),\\space x + (-R_i+r_i) \\}`}
+                    {`E_{yi} \\in \\{y + C_\\pi(R_i-r_i), \\space x + C_\\pi(-R_i+r_i),\\space x + (-R_i+r_i) \\}`}
                 </MathJax.Node>
             </MathJax.Context>
             <MathJax.Context input="tex">
                 <MathJax.Node>
-                    {`E_{zi} = \\{ z \\}`}
+                    {`E_{zi} \\in \\{ z \\}`}
                 </MathJax.Node>
             </MathJax.Context>
         </span>
