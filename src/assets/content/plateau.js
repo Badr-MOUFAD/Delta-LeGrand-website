@@ -1,5 +1,9 @@
 import React from 'react';
 
+import imgSchema from "assets/img/content-image/plateau-schema.svg";
+import imgEquation from "assets/img/content-image/plateau-equation.svg";
+import imgEspace from "assets/img/content-image/plateau-espace.png";
+
 
 export const sidebarLinks = [
     {
@@ -25,19 +29,25 @@ export const content = [
         id: "plateau-schema-cinematique",
         title: "Schéma cinématique",
         description: <SchemaPlateau />,
-        image: "",
+        image: imgSchema,
+        width:400,
+        heigh:400,
     },
     {
         id: "plateau-equation-mouvement",
         title: "Equation du mouvement",
         description: <EquationPlateau />,
-        image: "",
+        image: imgEquation,
+        height: 500,
+        width: 600,
     },
     {
         id: "plateau-espace-travail",
         title: "Espace de travail",
         description: <WorkspacePlateau />,
-        image: "",
+        image: imgEspace,
+        height: 400,
+        width: 400,
     },
     {
         id: "plateau-solidworks",
