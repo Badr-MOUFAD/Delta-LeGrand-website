@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { Link } from "react-router-dom";
 
 // reactstrap components
-import { Button, Container, Row, Col, Badge, Card, CardImg, CardBody } from "reactstrap";
+import { Button, Container, Row, Col, Badge, Card, CardImg, CardBody, Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption  } from "reactstrap";
 
 // animating the content
 import Fade from 'react-reveal/Fade';
@@ -16,6 +22,9 @@ import { teamMembers } from '../assets/content/team';
 import plateauImage from "assets/img/theme/img-1-1200x1000.jpg";
 import robotImage from "assets/img/theme/promo-1.png";
 import InterfaceSVG from "assets/img/ill/ill-2.svg";
+import deltaLogo from 'assets/img/brand/delta-logo-3.png';
+
+import { plateauPhotos } from "../assets/content/carouselContent";
 
 
 export default function LandingPage(props) {
@@ -68,10 +77,10 @@ export function Slogan(props) {
                     <Col className="text-center" lg="6">
                         {/* Slogan */}
                         <img
-                        alt="..."
-                        className="img-fluid"
-                        src={require("assets/img/brand/argon-react-white.png")}
-                        style={{ width: "200px" }}
+                          alt="..."
+                          className="img-fluid"
+                          src={deltaLogo}
+                          style={{ width: "200px" }}
                         />
                         <p className="lead text-white">
                             {slogan}
@@ -86,6 +95,8 @@ export function Slogan(props) {
                               color="default"
                               href={linkDowloadSheet}
                               size="lg"
+                              tag={Link}
+                              to="/tech-sheet"
                               >
                               <span className="btn-inner--icon mr-1">
                                 <i className="fa fa-list-ul" />
@@ -283,12 +294,11 @@ export function PlateauDescription(props) {
           <Container>
             <Row className="row-grid align-items-center">
               <Col md="6">
+                <Fade bottom>
                 <Card className="bg-warning shadow border-0">
-                  <CardImg
-                    alt="..."
-                    src={plateauImage}
-                    top
-                  />
+
+                  <CustomCarousel photos={plateauPhotos} />
+
                   <blockquote className="card-blockquote">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -310,12 +320,12 @@ export function PlateauDescription(props) {
                       Design du plateau
                     </h4>
                     <p className="lead text-italic text-white">
-                      The Arctic Ocean freezes every winter and much of the
-                      sea-ice then thaws every summer, and that process will
-                      continue whatever happens.
+                      Un squelette en forme « Y » couvert d’une fine plaque en aluminium délimitant l’espace de travail. <br />
+                      Ce design ingénieur est spécialement choisi de sorte à allégier au maximum le plateau et ainsi augmenter d’avantage la charge qu’il peut supporter.
                     </p>
                   </blockquote>
                 </Card>
+                </Fade>
               </Col>
               <Col md="6">
                 <div className="pl-md-5">
@@ -484,7 +494,7 @@ export function TeamMembers(props) {
                 </Col>
             </Row>
 
-            <Row>
+            <Row className="d-flex justify-content-center">
                 {teamMembers.map((member, i) => {
                     return(
                         <Col key={`anding-page-team-member-${i}`} className="mb-5" xs="6" lg="3" md="6">
@@ -494,7 +504,7 @@ export function TeamMembers(props) {
                                     alt="..."
                                     className="rounded img-center img-fluid shadow shadow-lg--hover"
                                     src={member.image}
-                                    style={{ width: "300px" }}
+                                    style={{ width: "300px", height: "150px" }}
                                     />
                                 <div className="pt-4 text-center">
                                     <h6 className="title">
@@ -510,4 +520,55 @@ export function TeamMembers(props) {
             </Row>
         </Container>
     );
+}
+
+
+export function CustomCarousel(props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const items = props.photos;
+
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  }
+
+  const slides = items.map((item) => {
+    return (
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.src}
+      >
+        <img src={item.src} alt={item.altText} width={500} height={350}/>
+        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+      </CarouselItem>
+    );
+  });
+
+  return (
+    <Carousel
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+    >
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      {slides}
+      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+    </Carousel>
+  );
 }

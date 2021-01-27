@@ -6,9 +6,11 @@ import { Container, Row } from "reactstrap";
 
 //
 import LandingPage from "./LandingPage";
+import RemerciementPage from "./RemerciementPage";
 import Nacelle from "./studies/Nacelle";
 import Plateau from "./studies/Plateau";
 import Simulation from "./studies/Simulation";
+import TechSheetPage from "./TechSheetPage";
 
 
 export default function Index(props) {
@@ -20,14 +22,12 @@ export default function Index(props) {
         <Route 
           exact  path="/landing-page" 
           render={() => <LandingPage />}
-          />  
+          /> 
+        
+        {/* Fiche technique */}
         <Route 
-          exact path="/technical-sheet" 
-          render={() => <h1> Hello </h1>}
-          />
-        <Route 
-          exact path="/our-studies" 
-          render={() => <h1> Hello </h1>}
+          exact path="/tech-sheet" 
+          render={() => <TechSheetPage />}
           />
 
         { /* nos études */}
@@ -44,6 +44,12 @@ export default function Index(props) {
         <Route 
           exact path="/studies-simulation" 
           render={() => <Simulation />}
+          />
+
+        {/* Remerciement */}
+        <Route
+          exact="/remerciement-page"
+          render={() => <RemerciementPage />}
           />
 
         <Redirect to="/landing-page"/>

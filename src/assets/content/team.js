@@ -9,6 +9,7 @@ import imgNouhailaElHAIL from "assets/img/teamMembers/nouhaila-EL-HAIL.jpeg";
 import imgAbdelmelik from "assets/img/teamMembers/abdelmelik-CHEIKH-MOHAMED-AHMED.jpeg";
 import imgAbdelmonimBajdir from "assets/img/teamMembers/abdelmonim-BAJDIR.jpeg";
 import imgLoubnaEssaydi from "assets/img/teamMembers/loubna-ESSAYDI.jpeg";
+import imgDarcCabrelAWASSI from "assets/img/teamMembers/darc-cabrel-AWASSI.jpeg";
 
 
 export const teamMembers = [
@@ -34,23 +35,23 @@ export const teamMembers = [
     },
     { 
         title: "",
-        name: <span>Loubna ESSAIDI</span>,
-        image: imgLoubnaEssaydi,
-    },
-    { 
-        title: "",
         name: <span>Zineb SABRI</span>,
         image: imgZinebSabri,
     },
     { 
         title: "",
-        name: <span>Nouhaila EL HAIL</span>,
-        image: imgNouhailaElHAIL,
+        name: <span>Loubna ESSAIDI</span>,
+        image: imgLoubnaEssaydi,
     },
     { 
         title: "",
         name: <span>Darc Cabrel AWASSI</span>,
-        image: imgBadrMOUFAD,
+        image: imgDarcCabrelAWASSI,
+    },
+    { 
+        title: "",
+        name: <span>Nouhaila EL HAIL</span>,
+        image: imgNouhailaElHAIL,
     },
     { 
         title: "",

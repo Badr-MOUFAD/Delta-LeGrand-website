@@ -82,7 +82,9 @@ function EquationPlateau(props) {
             et en y injectant à chaque fois les coordonnées d’une rotule on obtient ce qui suit :
 
             <MathJax.Context input="tex">
-                <MathJax.Node>{`L_i = z + \\frac{n_x.(x - x_{P_i}) + n_y.(y - y_{P_i})}{n_z}`}</MathJax.Node>
+                <MathJax.Node>
+                    {`L_i = z + \\frac{n_x.(x - x_{P_i}) + n_y.(y - y_{P_i})}{n_z}`}
+                </MathJax.Node>
             </MathJax.Context>
 
             avec :

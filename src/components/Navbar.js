@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import Headroom from "headroom.js";
 
 import { arrSocialMedia, arrRoutesNav } from "../assets/content/nav"
-import deltaLeGrandLogo from "../assets/img/brand/delta-le-grand-logo.png";
+import deltaLeGrandLogo from "../assets/img/brand/delta-logo-2.png";
+import deltaLeGrandLogoColor from "../assets/img/brand/delta-logo-3.png";
 
 // reactstrap components
 import {
@@ -55,7 +56,7 @@ export function NavbarLandingPage(props) {
                 <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                   <img
                     alt="..."
-                    src={""}
+                    src={deltaLeGrandLogo}
                   />
                 </NavbarBrand>
                 
@@ -77,7 +78,7 @@ export function NavbarLandingPage(props) {
                           <Link to="/">
                             <img
                               alt="..."
-                              src={deltaLeGrandLogo}
+                              src={deltaLeGrandLogoColor}
                             />
                           </Link>
                         </Col>
@@ -102,7 +103,7 @@ export function NavbarLandingPage(props) {
                         )}
 
                         <NavItem>
-                          <NavLink tag={Link} href="">
+                          <NavLink tag={Link} to="/remerciement-page">
                             Remerciement
                           </NavLink>
                         </NavItem>
