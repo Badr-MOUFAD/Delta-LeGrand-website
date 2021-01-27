@@ -143,7 +143,7 @@ export function VideoPub(props) {
             </Row>
             <Row>
                 <Col className="d-flex justify-content-center align-items-center">
-                    <iframe src={"https://www.youtube.com/embed/xm9Vxo79jWs&feature=youtu.b"} width="700" height="500"></iframe>
+                    <iframe src={"https://www.youtube.com/embed/xm9Vxo79jWs"} width="700" height="500"></iframe>
                 </Col>
             </Row>
         </Container>
