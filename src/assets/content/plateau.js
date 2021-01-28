@@ -1,5 +1,5 @@
 import React from 'react';
-import MathJax from 'react-mathjax2';
+//import MathJax from 'react-mathjax2';
 
 import imgSchema from "assets/img/content-image/plateau-schema.svg";
 import imgEquation from "assets/img/content-image/plateau-equation.svg";
@@ -81,7 +81,7 @@ function EquationPlateau(props) {
             En écrivant l’équation du plan engendré par les trois rotules 
             et en y injectant à chaque fois les coordonnées d’une rotule on obtient ce qui suit :
 
-            <MathJax.Context input="tex">
+            {/* <MathJax.Context input="tex">
                 <MathJax.Node>
                     {`L_i = z + \\frac{n_x.(x - x_{P_i}) + n_y.(y - y_{P_i})}{n_z}`}
                 </MathJax.Node>
@@ -91,7 +91,7 @@ function EquationPlateau(props) {
 
             <MathJax.Context input="tex">
                 <MathJax.Node>{`Pi \\in \\{ A, B, C\\}`}</MathJax.Node>
-            </MathJax.Context>
+            </MathJax.Context> */}
 
         </span>
     );

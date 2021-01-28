@@ -20,6 +20,11 @@ export default function Index(props) {
       <Switch>
         {/* page d'aceuil */}
         <Route 
+          exact  path="/" 
+          render={() => <LandingPage />}
+          />
+           
+        <Route 
           exact  path="/landing-page" 
           render={() => <LandingPage />}
           /> 

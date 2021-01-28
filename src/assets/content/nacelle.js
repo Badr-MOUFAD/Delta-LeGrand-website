@@ -1,5 +1,5 @@
 import React from "react";
-import MathJax from 'react-mathjax2';
+//import MathJax from 'react-mathjax2';
 
 import imgSchema from "assets/img/content-image/nacelle-schema.svg";
 import imgEquation from "assets/img/content-image/nacelle-equation.svg";
@@ -80,7 +80,7 @@ function EquationNacelle(props) {
             Le choix d’un tel niveau de détail dans la modélisation est motivé par le fait de prendre en compte les défauts géométriques de conception. <br /> <br />
             Par une fermeture géométrique, on établit que la longueur chercher vérifie l’équation du second ordre suivante : 
 
-            <MathJax.Context input="tex">
+            {/* <MathJax.Context input="tex">
                 <MathJax.Node>{`(n_x^2 + n_y^2 + n_z^2).L_i^2 + (n_x.E_{xi} + n_y.E_{yi} + n_z.E_{zi}).L_i + E_{xi}^2 + E_{yi}^2 + E_{zi}^2 - l_i^2 = 0`}</MathJax.Node>
             </MathJax.Context>
 
@@ -103,7 +103,7 @@ function EquationNacelle(props) {
                 <MathJax.Node>
                     {`E_{zi} \\in \\{ z \\}`}
                 </MathJax.Node>
-            </MathJax.Context>
+            </MathJax.Context> */}
         </span>
     );
 }

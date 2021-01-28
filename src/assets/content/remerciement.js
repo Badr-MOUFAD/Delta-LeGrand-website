@@ -5,8 +5,12 @@ import imgUM6P from "assets/img/institution/um6p-logo.jpg";
 
 import imgYvon from "assets/img/supervisors/yvon-gaignebet.jpg";
 import imgNajib from "assets/img/supervisors/najib-boumaaz.jpeg";
-import imgDefault from "assets/img/supervisors/default.png";
+//import imgDefault from "assets/img/supervisors/default.png";
 import imagYounes from "assets/img/supervisors/youness-habouli.jpg";
+import imgEzzahori from "assets/img/supervisors/encadrant-1.jpg";
+import imgAlami from "assets/img/supervisors/encadrant-2.jpg";
+import imgBenrbib from "assets/img/supervisors/encadrant-3.jpg";
+
 
 export const institution = [
     {
@@ -27,19 +31,19 @@ export const supervisors = [
         image: imgNajib,
     },
     {
-        name: "Younes HABBOULI ",
-        image: imagYounes,
+        name: "Hassan EZ-ZAHORI",
+        image: imgEzzahori,
     },
     {
         name: "Khalid BENRBIB",
-        image: imgDefault,
+        image: imgBenrbib,
     },
     {
         name: "Mhammed El ALLAMI",
-        image: imgDefault,
+        image: imgAlami,
     },
     {
-        name: "Hassan EZ-ZAHORI",
-        image: imgDefault,
+        name: "Younes HABBOULI ",
+        image: imagYounes,
     },
 ]

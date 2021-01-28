@@ -17,7 +17,7 @@ export default function functionFooter (props) {
             Team Delta Le Grand vous salue !
           </h3>
           <h4 className=" mb-0 font-weight-light">
-            N'hésiter pas à nous suivre
+            N'hésiter pas à explorer notre receuil des études
           </h4>
       </Col>
     </Row>

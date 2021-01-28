@@ -20,11 +20,11 @@ import Footer from '../components/Footer';
 import { teamMembers } from '../assets/content/team';
 
 import plateauImage from "assets/img/theme/img-1-1200x1000.jpg";
-import robotImage from "assets/img/theme/promo-1.png";
+import robotImage from "assets/img/theme/delta-photo.jpeg";
 import InterfaceSVG from "assets/img/ill/ill-2.svg";
 import deltaLogo from 'assets/img/brand/delta-logo-3.png';
 
-import { plateauPhotos } from "../assets/content/carouselContent";
+import { plateauPhotos, interfacePhotos } from "../assets/content/carouselContent";
 
 
 export default function LandingPage(props) {
@@ -172,7 +172,7 @@ export function ProductDescription(props) {
                 <Col className="order-md-2" md="6">
                   <img
                     alt="..."
-                    className="img-fluid floating"
+                    className="img-fluid floating rounded border shadow"
                     src={robotImage}
                   />
                 </Col>
@@ -376,6 +376,7 @@ export function InterfaceDescription(props) {
                       className="img-center img-fluid"
                       src={InterfaceSVG}
                     />
+                   {/*  <CustomCarousel photos={interfacePhotos}/> */}
                   </div>
                 </Col>
                 <Col className="order-lg-1" lg="6">
@@ -469,8 +470,23 @@ export function InterfaceDescription(props) {
                 </Col>
               </Row>
             </Container>
+
             {/* SVG separator */}
             <SvgSeperator />
+
+            <Fade bottom>
+              <Row className="d-flex justify-content-center align-items-center mt-5">
+                <Col xs="12" className="my-5"> 
+                  <h2 className="text-white text-center">
+                    <i className="fa fa-eye icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary mr-5"></i>
+                    Un aperçu sur l'interface
+                  </h2>
+                </Col>
+                <Col xs="12">
+                  <CustomCarousel photos={interfacePhotos}/>
+                </Col>
+              </Row>
+            </Fade>
           </section>
     );
 }
@@ -553,7 +569,7 @@ export function CustomCarousel(props) {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} width={500} height={350}/>
+        <img className="rounded img-center border shadow" src={item.src} alt={item.altText} width={500} height={350}/>
         <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
       </CarouselItem>
     );
