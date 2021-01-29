@@ -76,12 +76,14 @@ export function Slogan(props) {
                 <Row className="align-items-center justify-content-center">
                     <Col className="text-center" lg="6">
                         {/* Slogan */}
-                        <img
-                          alt="..."
-                          className="img-fluid"
-                          src={deltaLogo}
-                          style={{ width: "200px" }}
-                        />
+                        <Fade top>
+                          <img
+                            alt="..."
+                            className="img-fluid"
+                            src={deltaLogo}
+                            style={{ width: "200px" }}
+                            />
+                        </Fade>
                         <p className="lead text-white">
                             {slogan}
                         </p>
@@ -475,17 +477,38 @@ export function InterfaceDescription(props) {
             <SvgSeperator />
 
             <Fade bottom>
-              <Row className="d-flex justify-content-center align-items-center mt-5">
-                <Col xs="12" className="my-5"> 
-                  <h2 className="text-white text-center">
-                    <i className="fa fa-eye icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary mr-5"></i>
-                    Un aperçu sur l'interface
-                  </h2>
-                </Col>
-                <Col xs="12">
-                  <CustomCarousel photos={interfacePhotos}/>
-                </Col>
-              </Row>
+              <Container>
+                <Row className="d-flex justify-content-center align-items-center mt-5">
+                  <Col xs="12" className="my-5"> 
+                    <div className="d-flex px-3">
+                      <div>
+                        <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                          <i className="fa fa-eye text-primary" />
+                        </div>
+                      </div>
+                      <div className="pl-4">
+                        <h4 className="display-3 text-white">Aperçu sur l'interface</h4>
+                        <p className="text-white">
+                          Des screenshot de l'interface qui l'a montre en action.<br />
+                          Curieux de savoir plus sur son développement ? Vous avez tous l'accès <br />
+                          au code via 
+                          <a 
+                            href="https://github.com/Badr-MOUFAD/Delta-LeGrand-Interface"  
+                            target="_blank"
+                            className="text-white"
+                            >
+                            <strong> Github <i className="fa fa-github"></i></strong>
+                          </a>
+                          
+                        </p>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs="12">
+                    <CustomCarousel photos={interfacePhotos}/>
+                  </Col>
+                </Row>
+              </Container>
             </Fade>
           </section>
     );

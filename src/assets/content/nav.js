@@ -76,7 +76,7 @@ export const arrRoutesNav = [
 
 
 export const arrSocialMedia = [
-    {
+    /* {
         socialNetwork: "Facebook",
         iconClassName: "fa fa-facebook-square",
         description: "Aimez notre page Facebook",
@@ -87,11 +87,11 @@ export const arrSocialMedia = [
         iconClassName: "fa fa-instagram",
         description: "Suivez nous sur Instagram",
         href: "",
-    },
+    }, */
     {
         socialNetwork: "Github",
         iconClassName: "fa fa-github",
         description: "Suivez notre code sur Github",
-        href: "",
+        href: "https://github.com/Badr-MOUFAD/Delta-LeGrand-website",
     }
 ]
