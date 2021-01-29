@@ -24,14 +24,14 @@ export const teamMembers = [
         image: imgBadrMOUFAD,
     },
     { 
-        title: "Responsble Sécurité",
-        name: <span>Zakaria JOUHAFA</span>,
-        image: imgZakariaJouhafa,
-    },
-    { 
         title: "Responsable Achat",
         name: <span>Zineb SIFDINE</span>,
         image: imgZinebSifdine,
+    },
+    { 
+        title: "Responsble Sécurité",
+        name: <span>Zakaria JOUHAFA</span>,
+        image: imgZakariaJouhafa,
     },
     { 
         title: "",
@@ -40,8 +40,8 @@ export const teamMembers = [
     },
     { 
         title: "",
-        name: <span>Loubna ESSAIDI</span>,
-        image: imgLoubnaEssaydi,
+        name: <span>Nouhaila EL HAIL</span>,
+        image: imgNouhailaElHAIL,
     },
     { 
         title: "",
@@ -50,18 +50,17 @@ export const teamMembers = [
     },
     { 
         title: "",
-        name: <span>Nouhaila EL HAIL</span>,
-        image: imgNouhailaElHAIL,
-    },
-    { 
-        title: "",
-        name: <span>Abdelmelik CHEIKH MOHAMED AHMED</span>,
-        image: imgAbdelmelik,
+        name: <span>Loubna ESSAIDI</span>,
+        image: imgLoubnaEssaydi,
     },
     { 
         title: "",
         name: <span>Abdelmonim <br/>BAJDIR</span>,
         image: imgAbdelmonimBajdir,
     },
-
+    { 
+        title: "",
+        name: <span>Abdelmelik CHEIKH MOHAMED AHMED</span>,
+        image: imgAbdelmelik,
+    },
 ]

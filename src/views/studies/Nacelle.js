@@ -19,7 +19,7 @@ export default function Nacelle(props) {
 
     const routeHeader = {
         iconClassName: "ni ni-hat-3",
-        title: "Receuil Des Etudes"
+        title: "Recueil Des Etudes"
     }
 
     const sectionTitle = "Nacelle";

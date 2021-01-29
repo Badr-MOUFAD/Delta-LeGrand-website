@@ -109,7 +109,7 @@ export function Members(props) {
                                     alt="..."
                                     className="rounded img-center img-fluid shadow shadow-lg--hover"
                                     src={member.image}
-                                    style={{ width: "300px", height: "150px" }}
+                                    style={{ height: "150px" }}
                                     />
                                 <div className="pt-4 text-center">
                                     <h6 className="title">

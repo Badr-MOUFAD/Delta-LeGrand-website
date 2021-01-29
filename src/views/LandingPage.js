@@ -129,7 +129,7 @@ export function Slogan(props) {
                         <Fade bottom>
                           <div className="mt-5">
                               <small className="text-white font-weight-bold mb-0 mr-2">
-                                  made by passion <strong className="ml-3">Team Delta Le Grand</strong>
+                                  made by passion <strong className="ml-3">** Team Delta Le Grand **</strong>
                               </small>
                           </div>
                         </Fade>
@@ -283,7 +283,7 @@ export function ImpressionDescription(props) {
                 </Col>
               </Row>
             </Container>
-            <SvgSeperator />
+            {/* <SvgSeperator /> */}
           </section>
   );
 }
@@ -349,17 +349,17 @@ export function PlateauDescription(props) {
                     A ce propos, il est possible de graver sur un large champ de type de surface
                     allons des surfaces planes et inclinées jusqu’aux surfaces courbées. 
                   </p>
-                  <a
+                  <Link
                     className="font-weight-bold text-warning text-center mt-5"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
+                    to="/studies-plateau"
                     >
                     Explorer en détail la solution mécanique 
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
           </Container>
+          <SvgSeperator />
         </section>
     );
 }
@@ -489,7 +489,7 @@ export function InterfaceDescription(props) {
                       <div className="pl-4">
                         <h4 className="display-3 text-white">Aperçu sur l'interface</h4>
                         <p className="text-white">
-                          Des screenshot de l'interface qui l'a montre en action.<br />
+                          Voici des screenshots de l'interface qui l'a montre en action.<br />
                           Curieux de savoir plus sur son développement ? Vous avez tous l'accès <br />
                           au code via 
                           <a 
@@ -543,7 +543,7 @@ export function TeamMembers(props) {
                                     alt="..."
                                     className="rounded img-center img-fluid shadow shadow-lg--hover"
                                     src={member.image}
-                                    style={{ width: "300px", height: "150px" }}
+                                    style={{ height: "150px" }}
                                     />
                                 <div className="pt-4 text-center">
                                     <h6 className="title">

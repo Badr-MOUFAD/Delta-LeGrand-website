@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 // reactstrap components
 import { Button, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
 
@@ -17,7 +19,7 @@ export default function functionFooter (props) {
             Team Delta Le Grand vous salue !
           </h3>
           <h4 className=" mb-0 font-weight-light">
-            Explorer notre receuil des études
+            <Link to="/studies-nacelle" className="text-info">Explorer notre recueil des études</Link>
           </h4>
       </Col>
     </Row>

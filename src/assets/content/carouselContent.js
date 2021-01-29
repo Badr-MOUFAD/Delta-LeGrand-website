@@ -9,6 +9,8 @@ import imgInterface1 from "assets/img/carousel/interface-1.png";
 import imgInterface2 from "assets/img/carousel/interface-2.png";
 import imgInterface3 from "assets/img/carousel/interface-3.png";
 import imgInterface4 from "assets/img/carousel/interface-4.png";
+import imgInterface5 from "assets/img/carousel/interface-5.png";
+import imgInterface6 from "assets/img/carousel/interface-6.png";
 
 
 export const plateauPhotos = [
@@ -38,5 +40,11 @@ export const interfacePhotos = [
     },
     {
         src: imgInterface4,
+    },
+    {
+        src: imgInterface5,
+    },
+    {
+        src: imgInterface6,
     },
 ];
