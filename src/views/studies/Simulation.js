@@ -52,12 +52,12 @@ export default function Simulation(props) {
 
                     <Row className="mr-5 ml-5">
                         <Col 
-                            className="lg-border-right pt-5 pb-5 sticky-top bg-white" 
-                            style={{ height: "300px", zIndex: "10"}} 
+                            className="lg-border-right pt-5 pb-5 bg-white sticky-top mb-5 h-25" 
+                            style={{ zIndex: "10"}} 
                             xs={12}
                             lg={3}
                             >
-                            <Nav vertical>    
+                            <Nav vertical className="h-25 sticky-top">    
                                 <NavbarBrand 
                                     className="mb-3 border-bottom" 
                                     tag="h3"
@@ -98,23 +98,24 @@ export default function Simulation(props) {
                                 {content.map((item, i) => {
                                     return(
                                         <Row 
-                                            key={`nacelle-content-${i}`}
+                                            key={`simulation-content-${i}`}
                                             id={item.id} 
                                             className="mb-5"
                                             >
-                                            <Col xs={12} lg={8}>
+                                            <Col xs={12} lg={12}>
                                                 <h4>{item.title}</h4>
-                                                <p>{item.description}</p>
-                                                <p>{item.description}</p>
-                                                <p>{item.description}</p>
-                                                <p>{item.description}</p>
                                                 <p>{item.description}</p>
                                             </Col>
                                             <Col 
                                                 className="d-flex justify-content-center align-items-center"
-                                                xs={12} lg={4}
+                                                xs={12} lg={12}
                                                 >
-                                                <p>image here</p>
+                                                <img 
+                                                    className="rounded img-center img-fluid border p-2 mt-2"
+                                                    src={item.image} 
+                                                    alt="..." 
+                                                    height={item.height} width={item.width}
+                                                    />
                                             </Col>
                                         </Row>
                                     );

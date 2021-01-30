@@ -1,10 +1,11 @@
 import React from "react";
-//import MathJax from 'react-mathjax2';
 import Latex from 'react-latex';
 
 import imgSchema from "assets/img/content-image/nacelle-schema.svg";
 import imgEquation from "assets/img/content-image/nacelle-equation.svg";
 import imgEspace from "assets/img/content-image/nacelle-espace.png";
+
+import gifNacelle from "assets/gif/nacelle.gif";
 
 
 export const sidebarLinks = [
@@ -55,7 +56,7 @@ export const content = [
         id: "nacelle-solidworks",
         title: "SolidWorks",
         description: "La simulation suivante exhibe le fonctionnent de la nacelle",
-        image: "",
+        image: gifNacelle,
     },
 ];
 
@@ -81,34 +82,50 @@ function EquationNacelle(props) {
             Le choix d’un tel niveau de détail dans la modélisation est motivé par le fait de prendre en compte les défauts géométriques de conception. <br /> <br />
             Par une fermeture géométrique, on établit que la longueur chercher vérifie l’équation du second ordre suivante : 
 
-            {/* <MathJax.Context input="tex">
-                <MathJax.Node>{`(n_x^2 + n_y^2 + n_z^2).L_i^2 + (n_x.E_{xi} + n_y.E_{yi} + n_z.E_{zi}).L_i + E_{xi}^2 + E_{yi}^2 + E_{zi}^2 - l_i^2 = 0`}</MathJax.Node>
-            </MathJax.Context> */}
-
-            {/* avec :
-            <MathJax.Context input="tex">
-                <MathJax.Node>{`n_x, n_y, n_z`}</MathJax.Node>
-            </MathJax.Context>
-            sont les coordonées de la normale et 
-            <MathJax.Context input="tex">
-                <MathJax.Node>
-                    {`E_{xi} \\in \\{x + S_\\pi(R_i-r_i), \\space x + S_\\pi(-R_i+r_i),\\space x \\}`}
-                </MathJax.Node>
-            </MathJax.Context>
-            <MathJax.Context input="tex">
-                <MathJax.Node>
-                    {`E_{yi} \\in \\{y + C_\\pi(R_i-r_i), \\space x + C_\\pi(-R_i+r_i),\\space x + (-R_i+r_i) \\}`}
-                </MathJax.Node>
-            </MathJax.Context>
-            <MathJax.Context input="tex">
-                <MathJax.Node>
-                    {`E_{zi} \\in \\{ z \\}`}
-                </MathJax.Node>
-            </MathJax.Context> */}
-
-            <div style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}>
+            <div
+                className="d-flex justify-content-center my-2"
+                style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}
+                >
                 <Latex>
                     {"$$ (n_x^2 + n_y^2 + n_z^2).L_i^2 + (n_x.E_{xi} + n_y.E_{yi} + n_z.E_{zi}).L_i + E_{xi}^2 + E_{yi}^2 + E_{zi}^2 - l_i^2 = 0 $$"}
+                </Latex>
+            </div>
+
+            avec :
+
+            <div
+                className="d-flex justify-content-center my-2 my-2"
+                style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}
+                >
+                <Latex>
+                    {"$$ n_x, n_y, n_z $$"}
+                </Latex>
+            </div>
+
+            coordonnées de la normal exprimées en coordonnées sphérique et :
+
+            <div
+                className="d-flex justify-content-center my-2 my-2"
+                style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}
+                >
+                <Latex>
+                    {"$$ E_{xi} \\in \\{x + S_\\pi(R_1-r_1), \\space x + S_\\pi(-R_2+r_2),\\space x \\} $$"}
+                </Latex>
+            </div>
+            <div
+                className="d-flex justify-content-center my-2 my-2"
+                style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}
+                >
+                <Latex>
+                    {"$$ E_{yi} \\in \\{y + C_\\pi(R_i-r_i), \\space x + C_\\pi(-R_i+r_i),\\space x + (-R_i+r_i) \\} $$"}
+                </Latex>
+            </div>
+            <div
+                className="d-flex justify-content-center my-2 my-2"
+                style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}
+                >
+                <Latex>
+                    {"$$ E_{zi} \\in \\{ z \\} $$"}
                 </Latex>
             </div>
 

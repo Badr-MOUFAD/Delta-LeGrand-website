@@ -51,12 +51,12 @@ export default function Nacelle(props) {
 
                     <Row className="mr-5 ml-5">
                         <Col 
-                            className="lg-border-right pt-5 pb-5 sticky-top bg-white mb-5" 
-                            style={{ height: "300px", zIndex: "10"}} 
+                            className="lg-border-right pt-5 pb-5 bg-white sticky-top mb-5 h-25" 
+                            style={{ zIndex: "10"}} 
                             xs={12}
                             lg={3}
                             >
-                            <Nav vertical>    
+                            <Nav vertical className="h-25 sticky-top">    
                                 <NavbarBrand 
                                     className="mb-3 border-bottom" 
                                     tag="h3" 

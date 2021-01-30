@@ -1,9 +1,12 @@
 import React from 'react';
-//import MathJax from 'react-mathjax2';
+import Latex from 'react-latex';
 
 import imgSchema from "assets/img/content-image/plateau-schema.svg";
 import imgEquation from "assets/img/content-image/plateau-equation.svg";
 import imgEspace from "assets/img/content-image/plateau-espace.png";
+
+import gifPlateau from "assets/gif/plateau.gif";
+
 
 
 export const sidebarLinks = [
@@ -54,7 +57,7 @@ export const content = [
         id: "plateau-solidworks",
         title: "SolidWorks",
         description: <SimulationPlateau />,
-        image: "",
+        image: gifPlateau,
     },
 ];
 
@@ -81,17 +84,25 @@ function EquationPlateau(props) {
             En écrivant l’équation du plan engendré par les trois rotules 
             et en y injectant à chaque fois les coordonnées d’une rotule on obtient ce qui suit :
 
-            {/* <MathJax.Context input="tex">
-                <MathJax.Node>
-                    {`L_i = z + \\frac{n_x.(x - x_{P_i}) + n_y.(y - y_{P_i})}{n_z}`}
-                </MathJax.Node>
-            </MathJax.Context>
+            <div
+                className="d-flex justify-content-center my-2"
+                style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}
+                >
+                <Latex>
+                    {"$$ L_i = z +  \\frac{n_x.(x - x_{P_i}) + n_y.(y - y_{P_i})}{n_z} $$"}
+                </Latex>
+            </div>
 
             avec :
 
-            <MathJax.Context input="tex">
-                <MathJax.Node>{`Pi \\in \\{ A, B, C\\}`}</MathJax.Node>
-            </MathJax.Context> */}
+            <div
+                className="d-flex justify-content-center my-2"
+                style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}
+                >
+                <Latex>
+                    {"$$ Pi \\in \\{ A, B, C\\} $$"}
+                </Latex>
+            </div>
 
         </span>
     );
