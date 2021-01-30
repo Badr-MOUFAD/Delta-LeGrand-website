@@ -34,32 +34,32 @@ export const teamMembers = [
         image: imgZakariaJouhafa,
     },
     { 
-        title: "",
+        title: "Cellule électrique",
         name: <span>Zineb SABRI</span>,
         image: imgZinebSabri,
     },
     { 
-        title: "",
+        title: "Cellule électrique",
         name: <span>Nouhaila EL HAIL</span>,
         image: imgNouhailaElHAIL,
     },
     { 
-        title: "",
+        title: "Cellule électrique",
         name: <span>Darc Cabrel AWASSI</span>,
         image: imgDarcCabrelAWASSI,
     },
     { 
-        title: "",
+        title: "Cellule conception",
         name: <span>Loubna ESSAIDI</span>,
         image: imgLoubnaEssaydi,
     },
     { 
-        title: "",
+        title: "Cellule conception",
         name: <span>Abdelmonim <br/>BAJDIR</span>,
         image: imgAbdelmonimBajdir,
     },
     { 
-        title: "",
+        title: "Cellule conception",
         name: <span>Abdelmelik CHEIKH MOHAMED AHMED</span>,
         image: imgAbdelmelik,
     },

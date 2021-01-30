@@ -489,7 +489,7 @@ export function InterfaceDescription(props) {
                       <div className="pl-4">
                         <h4 className="display-3 text-white">Aperçu sur l'interface</h4>
                         <p className="text-white">
-                          Voici des screenshots de l'interface qui l'a montre en action.<br />
+                          Voici des screenshots de l'interface qui l'a montre en action<br /> <br />
                           Curieux de savoir plus sur son développement ? Vous avez tous l'accès <br />
                           au code via 
                           <a 

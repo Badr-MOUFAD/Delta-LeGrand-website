@@ -1,5 +1,6 @@
 import React from "react";
 //import MathJax from 'react-mathjax2';
+import Latex from 'react-latex';
 
 import imgSchema from "assets/img/content-image/nacelle-schema.svg";
 import imgEquation from "assets/img/content-image/nacelle-equation.svg";
@@ -82,9 +83,9 @@ function EquationNacelle(props) {
 
             {/* <MathJax.Context input="tex">
                 <MathJax.Node>{`(n_x^2 + n_y^2 + n_z^2).L_i^2 + (n_x.E_{xi} + n_y.E_{yi} + n_z.E_{zi}).L_i + E_{xi}^2 + E_{yi}^2 + E_{zi}^2 - l_i^2 = 0`}</MathJax.Node>
-            </MathJax.Context>
+            </MathJax.Context> */}
 
-            avec :
+            {/* avec :
             <MathJax.Context input="tex">
                 <MathJax.Node>{`n_x, n_y, n_z`}</MathJax.Node>
             </MathJax.Context>
@@ -104,6 +105,13 @@ function EquationNacelle(props) {
                     {`E_{zi} \\in \\{ z \\}`}
                 </MathJax.Node>
             </MathJax.Context> */}
+
+            <div style={{fontSize: "15px", overflowX: "auto", overflowY: "hidden"}}>
+                <Latex>
+                    {"$$ (n_x^2 + n_y^2 + n_z^2).L_i^2 + (n_x.E_{xi} + n_y.E_{yi} + n_z.E_{zi}).L_i + E_{xi}^2 + E_{yi}^2 + E_{zi}^2 - l_i^2 = 0 $$"}
+                </Latex>
+            </div>
+
         </span>
     );
 }

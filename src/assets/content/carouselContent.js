@@ -5,6 +5,7 @@ import imgPlateau2 from "assets/img/carousel/plateau-2.png";
 import imgPlateau3 from "assets/img/carousel/plateau-3.png";
 import imgPlateau4 from "assets/img/carousel/plateau-4.png";
 
+import imgInterface0 from "assets/img/carousel/interface-0.png";
 import imgInterface1 from "assets/img/carousel/interface-1.png";
 import imgInterface2 from "assets/img/carousel/interface-2.png";
 import imgInterface3 from "assets/img/carousel/interface-3.png";
@@ -29,6 +30,9 @@ export const plateauPhotos = [
 ];
 
 export const interfacePhotos = [
+    {
+        src: imgInterface0,
+    },
     {
         src: imgInterface1,
     },
