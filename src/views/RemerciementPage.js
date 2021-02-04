@@ -39,7 +39,7 @@ export default function RemerciementPage(props) {
                 <Members
                     arr={institution}
                     title="Et notamment :"
-                    description="Nous sommes reconnaissants envers les intuitions qui nous ont fourni l’infrastructure, le matériel et le personnel idoine"
+                    description="Nous sommes reconnaissants envers les institutions qui nous ont fourni l’infrastructure, le matériel et le personnel idoine"
                     />
             </Fade>
 
@@ -72,7 +72,7 @@ export function MotDeRemerciement(props) {
                         <p className="lead text-white">
                             <h4 className="font-weight-bold">Team Delta Le Grand</h4>
                             tient à exprimer sa chaleureuse et sincère gratitude <br />
-                            envers tout un chacun ayant contribuer de près ou de loin <br/>
+                            envers tout un chacun ayant contribué de près ou de loin <br/>
                             à la concrétisation de ce projet
                         </p>
                     </Col>

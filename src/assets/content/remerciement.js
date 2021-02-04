@@ -1,6 +1,6 @@
 import React from "react";
 
-import imgEMINES from "assets/img/institution/emines-logo.jpg";
+import imgEMINES from "assets/img/institution/emines-logo.png";
 import imgUM6P from "assets/img/institution/um6p-logo.jpg";
 
 import imgYvon from "assets/img/supervisors/yvon-gaignebet.jpg";

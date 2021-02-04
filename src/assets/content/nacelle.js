@@ -14,7 +14,7 @@ export const sidebarLinks = [
         href: "#nacelle-schema-cinematique",
     },
     {
-        text: "Equation de mouvement",
+        text: "Equations de mouvement",
         href: "#nacelle-equation-mouvement",
     },
     {
@@ -38,7 +38,7 @@ export const content = [
     },
     {
         id: "nacelle-equation-mouvement",
-        title: "Equation du mouvement",
+        title: "Equations du mouvement",
         description: <EquationNacelle />,
         image: imgEquation,
         height: 500,
@@ -65,10 +65,11 @@ function SchemaNacelle(props) {
 
     return(
         <span>
-            Le mouvement de la nacelle est principalement dû à une liaisons hélicoïdales entrainées, chacune d’elles par un moteur pas à pas. <br />
-            Notons que dans ce schéma on se focalise sur uniquement un seul côté. La liaison hélicoïdale permet la translation verticale d’un coulisseau. <br />
-            Deux rotules émanent du coulisseau qui elles-mêmes sont reliées à deux autres rotules fixées au niveau de la nacelle. <br /> <br />
-            L’objectif cette dernière disposition est de contraindre la nacelle à garder une position horizontale
+            Le mouvement de la nacelle se fait principalement grace à 3 liaisons hélicoïdales dont chacune est entrainées par un moteur pas à pas. <br />
+            Notons que dans ce schéma on raisonne sur un seul axe. <br />
+            La liaison hélicoïdale permet la translation verticale d’un coulisseau,
+            dont émanent deux rotules qui sont elles-mêmes reliées à deux autres rotules fixées au niveau de la nacelle. <br />
+            Cette configuration contraint la nacelle à garder une position horizontale.
         </span>
     );
 }
@@ -77,9 +78,9 @@ function EquationNacelle(props) {
 
     return(
         <span>
-            L’objectif est de trouver la commande (sous forme d’une distance) à fournir aux moteurs pas à pas pour parvenir à une position souhaitée. <br /> 
-            La particularité de notre cas est que chaque axe est décrit par ces propres paramètres auxquelles sont ajoutés l’inclinaison de l’axe. <br /> 
-            Le choix d’un tel niveau de détail dans la modélisation est motivé par le fait de prendre en compte les défauts géométriques de conception. <br /> <br />
+            L’objectif est de trouver la commande (sous forme d’une distance) à fournir aux moteurs pas à pas pour parvenir à une position souhaitée. <br />
+            La particularité de notre cas est que chaque axe est décrit par ces propres paramètres auxquels sont ajoutés les inclinaisons provenant des défauts géométriques de conception. <br /> <br />
+
             Par une fermeture géométrique, on établit que la longueur chercher vérifie l’équation du second ordre suivante : 
 
             <div
@@ -139,7 +140,7 @@ function Workspace(props) {
     return(
         <span>
             On détermine par le biais d’une simulation numérique l’ensemble des points atteignables par la nacelle. Pour un point donné, on vérifie : <br/> <br/>
-            Qu’il est <strong>théoriquement atteignable</strong>, c’est-à-dire que les équations de commande en sont bien déterminées <br/>
+            Qu’il est <strong>théoriquement atteignable</strong>, c’est-à-dire que les équations de commande en sont bien définies <br/>
             Qu’il est <strong>pratiquement atteignable</strong>, c’est-à-dire que les longueurs calculées ne dépassent pas la longueur des axes et que les frontières de la nacelle ne dépassent pas les bordures du robot.
         </span>
     );

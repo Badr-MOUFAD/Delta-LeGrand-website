@@ -63,8 +63,8 @@ export default function LandingPage(props) {
 export function Slogan(props) {
     const slogan = (
       <span>
-        <Slide left>Ce que vous imaginez est désormais à portée de main</Slide> <br />
-        <Slide right>Imaginez, Modélisez et Imprimez</Slide>
+        <Slide left>Un Delta Grand</Slide> <br />
+        <Slide right>pour des impressions grandioses</Slide>
       </span>
       );
     const linkDowloadSheet = "";
@@ -146,14 +146,14 @@ export function ProductDescription(props) {
         title: "Delta Le Grand",
         description: (
           <span>
-              Delta le Grand est une impriment 3D colossale adaptée pour imprimer des pièces aussi bien petite que grande. <br /> <br />
+              Delta le Grand est une imprimante 3D colossale adaptée pour imprimer des pièces aussi bien petites que grandes. <br /> <br />
               Il est doté d’une nacelle pouvant confectionner avec finesse des objets soit en plastique soit en céramique.<br />
               Il est aussi muni d’un plateau mobile capable non seulement de translater verticalement mais aussi de s’incliner dans toutes les directions offrant ainsi une meilleure adaptabilité et mobilité. <br /> <br />
               Delta le Grand dispose notamment de sa propre interface de commande, ergonomique et spécialement conçue pour mettre en œuvre toutes ses fonctionnalités. 
           </span>),
         features: [
             {
-                description: <span><strong>Impression 3D</strong><br/>avec une précision résonable</span>,
+                description: <span><strong>Impression 3D</strong><br/>avec précision</span>,
                 iconClassName: "ni ni-ruler-pencil"
             },
             {
@@ -252,8 +252,8 @@ export function ImpressionDescription(props) {
                     </div>
                     <h5 className="mt-3">Précision</h5>
                     <p className="mt-3">
-                      grâce au pas fin des moteurs combiné avec le pas des glissières, <br />
-                      la nacelle peut atteindre une précision allons jusqu’à 0.1 mm
+                      grâce à la combinaison des pas fins des moteurs pas à pas et des glissières, <br />
+                      la nacelle peut atteindre une précision allant jusqu’à 0.1 mm
                     </p>
                   </Fade>
                 </Col>
@@ -265,7 +265,7 @@ export function ImpressionDescription(props) {
                     <h5 className="mt-3">Filament PLA</h5>
                     <p className="mt-3">
                       l’extrudeuse de plastique est alimentée par une bobine de filament PLA. <br />
-                      Elle est principalement dédiée à des petits objets en raison de sa fine tête
+                      Elle est principalement dédiée à l'impression des petits objets en raison de sa fine tête
                     </p>
                   </Fade>
                 </Col>
@@ -277,7 +277,7 @@ export function ImpressionDescription(props) {
                     <h5 className="mt-3">Céramique</h5>
                     <p className="mt-3">
                       L’extrudeuse de céramique est alimentée par un réservoir rempli de Clay. <br />
-                      Elle est adaptée à l’impression des objets de grandes tailles
+                      Elle est adaptée à l’impression des objets de grande taille
                     </p>
                   </Fade>
                 </Col>
@@ -322,8 +322,8 @@ export function PlateauDescription(props) {
                       Design du plateau
                     </h4>
                     <p className="lead text-italic text-white">
-                      Un squelette en forme « Y » couvert d’une fine plaque en aluminium délimitant l’espace de travail. <br />
-                      Ce design ingénieur est spécialement choisi de sorte à allégier au maximum le plateau et ainsi augmenter d’avantage la charge qu’il peut supporter.
+                      Un support en forme « Y » couvert d’une fine plaque en aluminium délimitant l’espace de travail. <br />
+                      Ce design ingénieur est spécialement choisi de sorte à alléger au maximum le plateau et ainsi augmenter d’avantage la charge qu’il peut supporter.
                     </p>
                   </blockquote>
                 </Card>
@@ -336,7 +336,7 @@ export function PlateauDescription(props) {
                   </div>
                   <h3>Plateau inclinable</h3>
                   <p className="lead">
-                    L’avantage exclusive de Delta Le Grand c’est qu’il est doté d’un plateau mobile qui peut non seulement translater
+                    L’avantage exclusif de Delta Le Grand c’est qu’il est doté d’un plateau mobile qui peut non seulement translater
                     verticalement mais aussi effectuer des inclinaisons de 15 degrés dans toutes les directions. 
                   </p>
                   <p>
@@ -345,9 +345,8 @@ export function PlateauDescription(props) {
                     le plateau s’incline et exploite ainsi la gravité pour maintenir l’équilibre de la pièce en cours d’impression
                   </p>
                   <p className="mb-5">
-                    L’inclinaison du plateau offre notamment une meilleure adaptation au surface irrégulière. <br/>
-                    A ce propos, il est possible de graver sur un large champ de type de surface
-                    allons des surfaces planes et inclinées jusqu’aux surfaces courbées. 
+                    L’inclinaison du plateau offre notamment une meilleure adaptation aux surfaces irrégulières. <br/>
+                    allant des surfaces planes et inclinées jusqu’aux surfaces courbées.
                   </p>
                   <Link
                     className="font-weight-bold text-warning text-center mt-5"
@@ -392,7 +391,7 @@ export function InterfaceDescription(props) {
                       <h4 className="display-3 text-white">Interface Intuitive</h4>
                       <p className="text-white">
                         Delta le Grand est commandé via une interface graphique simple et intuitive. 
-                        Elle se présente sous forme d’une application Desktop développé en utilisant 
+                        Elle se présente sous forme d’une application Desktop développée en utilisant 
                         les UI Web Technologies.
                       </p>
                     </div>
@@ -408,7 +407,7 @@ export function InterfaceDescription(props) {
                           </div>
                           <div className="pl-4">
                             <h5 className="title text-success">
-                              Développent
+                              Développement
                             </h5>
                             <p>
                               L’utilisation des UI web technologies dans notre cas le Framework React et Material-UI <br/>
@@ -433,8 +432,8 @@ export function InterfaceDescription(props) {
                               Mode d'utilisation
                             </h5>
                             <p>
-                              <strong>Mode manuel</strong> dans lequel il est possible de commander soit indépendamment la nacelle et le plateau soit simultanément.<br />
-                              <strong>Mode automatique</strong> dans lequel il est possible de charger un fichier .csv et exécuter automatiquement les commandes qui y sont dedans.
+                              <strong>Mode manuel</strong> dans lequel il est possible de commander soit indépendamment la nacelle et le plateau ainsi que les deux simultanément.<br />
+                              <strong>Mode automatique</strong> dans lequel il est possible de charger un fichier .csv et exécuter automatiquement les commandes qui y figurent.
                             </p>
                           </div>
                         </div>
@@ -455,7 +454,7 @@ export function InterfaceDescription(props) {
                               Cross-plateform
                             </h5>
                             <p>
-                              L'interface est adapté aussi bien pour les machines Windows que les machines Mac
+                              L'interface est adaptée aussi bien pour les machines Windows que les machines Mac
                             </p>
                             <a
                               className="text-success"
@@ -487,9 +486,8 @@ export function InterfaceDescription(props) {
                         </div>
                       </div>
                       <div className="pl-4">
-                        <h4 className="display-3 text-white">Aperçu sur l'interface</h4>
+                        <h4 className="display-3 text-white">Aperçu de l'interface</h4>
                         <p className="text-white">
-                          Voici des screenshots de l'interface qui l'a montre en action<br /> <br />
                           Curieux de savoir plus sur son développement ? Vous avez tous l'accès <br />
                           au code via 
                           <a 

@@ -35,8 +35,8 @@ function Liaisons(props) {
 
     return(
         <span>
-            On simule le cas extrème où on applique une charge de 10kg sur l'extrémité de l'arrêtes du plateau tout en inclinant de 15 degrés<br />
-            On note qu'on tient on compte le poid du plateau.
+            On simule le cas extrême où on applique une charge de 10kg sur l'extrémité de l'arrête du plateau sous une inclinaison de 15 degrés.<br />
+            On note qu'on tient compte du poid du plateau.
         </span>
     );
 }
@@ -46,8 +46,8 @@ function Plaque(props) {
 
     return(
         <span>
-            On se positionne encore une fois dans le cas extrème où le plateau est incliné de 15 degrés
-            et où on applique une charge de 10kg au niveau de l'extrémité de la plaque en aluminium.
+            On se positionne encore une fois dans le cas extrême où le plateau est incliné de 15 degrés
+            auquel on applique une charge de 10kg au niveau de l'extrémité de la plaque en aluminium.
         </span>
     );
 }

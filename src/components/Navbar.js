@@ -104,7 +104,7 @@ export function NavbarLandingPage(props) {
 
                         <NavItem>
                           <NavLink tag={Link} to="/remerciement-page">
-                            Remerciement
+                            Remerciements
                           </NavLink>
                         </NavItem>
                     </Nav> 
